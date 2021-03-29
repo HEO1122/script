@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<style type="text/css">
+	html, body {
+		margin: 0px;
+		padding: 0px;
+		height: 100%;
+	}
+</style>
+</head>
+<body>
+	<h3 class="w3-deep-purple w3-center w3-padding t2" id="test"></h3>
+	<div class="test"></div>
+	<h1 name="test"></h1>
+	<p class="t3"></p>
+
+<script type="text/javascript">
+	var no = prompt('문자를 입력하세요!');
+	//document.getElementById('test').innerHTML = no;
+	document.getElementsByClassName('t2')[0].innerText = '<small>' + no + '</small>';
+	document.getElementsByClassName('test')[0].textContent = 
+				'<h3 class="w3-blue w3-padding w3-center">' + no + '</h3>';
+	document.getElementsByName('test')[0].innerHTML = '입력받은 데이터 : ' + no;
+	document.getElementsByTagName('h3')[0].innerHTML = '태그이름으로 선택 : ' + no;
+	document.querySelectorAll('p:nth-child(4)')[0].innerHTML = '선택자로 선택 : ' + no;
+	/*
+		참고 선택한 태그 내용을 바꾸는 방법
+			
+		태그.innerHTML = 데이터; ==> 데이터의 추가된 태그를 해석한다.
+		
+		==> 데이터에 포함된 태그를 문자로 처리한다.
+		태그.innerText = 데이터;
+		태그.textContent = 데이터;
+	*/
+</script>
+</body>
+</html>
