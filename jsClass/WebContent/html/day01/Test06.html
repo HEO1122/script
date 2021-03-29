@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+/*
+	함수 작성 형식 1]
+		
+		function 함수이름(매개변수리스트){
+			처리내용
+		}
+		
+	함수 작성 형식 2 ]
+		
+		var 변수이름 = function(매개변수리스트){
+			처리내용
+			==> 이경우 이 함수는 무명함수가되고
+				이 무명함수를 변수에 담아서 사용하게 된다.
+		}
+		
+		참고 ]
+			함수를 호출할 때 매개변수로 함수자체를 입력해줄 수도 있다.
+			그리고 함수를 만들때 매개변수리스트에 함수를 만들수도 있다.
+ */
+	var globValue1 = 1;
+	globValue2 = 1;
+	
+	function func01() {
+		var locValue; // 지역변수
+		globVal = 5000;	
+		// 함수내에서 var 가 생략된채로 변수가 만들어지면 자동 전역변수가 된다.
+		locValue = 50;
+	}
+	
+	func01();
+	alert('globVal : ' + globVal);
+//	alert('locValue : ' + locValue);
+	globVal = 999;
+	alert('globVal : ' + globVal);
+	
+	
+</script>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

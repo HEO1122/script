@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+//	alert(num == undefined);
+	alert(typeof num);
+	
+	var num = 1000;
+	/*
+		이 경우 num 변수의 선언 구문(var num;) 이 스크립트의 최상단으로 끌어올려져서 처리가 된다.
+		결과적으로
+			
+			var num;
+			alert(typeof num);
+			num = 1000;
+			alert('num : ' + num);
+			
+		의 형태로 처리가 된다.
+		이것을 변수호이스팅이라고 한다.
+		
+		따라서 되도록이면 변수 선언은 스크립트 태그 시작부분에 두는 것이 좋다.
+	*/
+	alert('num : ' + num);
+</script>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
