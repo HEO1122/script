@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600 w3-center">
+		<h1 class="w3-deep-purple w3-card-4 w3-round-large">Login</h1>
+		<div class="w3-col w3-margin-top w3-card-4 w3-round-large">
+			<div class="w3-col w3-margin-top">
+				<label for="id" class="w3-col s2">I D : </label>
+				<input type="text" name="id" id="id" placeholder="아이디를 입력하세요!"
+						class="w3-col s9 w3-input w3-border w3-border-indigo">
+			</div>
+			<div class="w3-col w3-margin-top w3-margin-bottom">
+				<label for="pw" class="w3-col s2">P W : </label>
+				<input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요!"
+						class="w3-col s9 w3-input w3-border w3-border-indigo">
+			</div>
+		</div>
+		<div class="w3-col w3-margin-top">
+			<div class="w3-third w3-red w3-button w3-hover-orange" id="cbtn">취소</div>
+			<div class="w3-third w3-amber w3-button w3-hover-yellow" id="rbtn">리셋</div>
+			<div class="w3-third w3-light-green w3-button w3-hover-lime" id="sbtn">제출</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	/*
+		이벤트 추가방법
+			1. 태그선택
+			2. 이벤트를 등록한다.
+	*/
+	document.getElementById('id').onfocus = function(){
+		this.style.backgroundColor = 'aqua';
+	}
+	
+	document.getElementById('id').onblur = function(){
+		this.style.backgroundColor = 'white';
+	}
+	
+	/*
+		참고 ]
+			태그의 내용 읽는 방법 ]
+				
+				1. 일반태그.innerHTML		==> 태그를 해석
+				---------------------------------------------------------
+				2. 일반태그.innerText		==> 태그를 문자로 처리
+				3. 일반태그.textContent
+				
+				=========================================================
+				4. 입력태그.value
+				
+			태그의 내용 수정하는 방법 ]
+				1. 일반태그.innerHTML = 데이터;
+				2. 일반태그.innerText = 데이터;
+				3. 일반태그.textContent = 데이터;
+				=========================================================
+				4. 입력태그.value = 데이터;
+	*/
+	
+	document.getElementById('rbtn').onclick = function(){
+		document.getElementById('id').value = '';
+		document.getElementById('pw').value = '';
+	}
+	
+	document.getElementById('cbtn').onclick = function(){
+		document.getElementById('id').value = 'cancel';
+	}
+	
+	// 제출버튼을 클릭하면 입력된 아이디와 비밀번호를 창을 띄워서 보여주도록 해보자.
+	document.getElementById('sbtn').onclick = show;
+	
+	// 함수 정의
+	function show(){
+		var sid = document.getElementById('id').value;
+		var spw = document.getElementById('pw').value;
+		
+		alert('id : ' + sid + '\npw : ' + spw);
+	}
+	
+	/*
+		이벤트 추가하는 방법
+		
+			형식 1 ]
+				태그선택.on이벤트이름 =  function(){
+					처리내용...
+				}
+				
+			형식 2 ]
+				
+				var 함수이름 = function(){ 
+					처리내용
+				}
+				또는
+				function 함수이름(){
+					처리내용...
+				}
+				
+				태그선택.on이벤트이름 = 함수이름;
+	*/
+	
+	// 비밀번호 입력란에 올바른비밀번호 '12345'입력이 되는지 체크해보자.(onchange)
+/* 	document.getElementById('pw').onchange = function(){ */
+	/*
+	document.getElementById('pw').onkeyup = function(){
+		var spw = this.value;
+		if(spw == '12345'){
+			alert('올바른 비밀번호입니다.');
+		} else {
+			alert('다시 입력하세요!');
+		}
+	}
+	*/
+	
+	document.getElementById('id').onkeydown = function(){
+		var sid = this.value;
+		alert('id : ' + sid);
+	}
+	
+</script>
+</body>
+</html>

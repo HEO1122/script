@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript" src="../../js/w3color.js"></script>
+<style type="text/css">
+	.dan {
+		display: inline-block;
+		width: 160px;
+	}
+	.mg0 {
+		margin: 0px;
+	}
+	.mg10 {
+		margin: 10px;
+	}
+	.mgt20 {
+		margin-top: 20px;
+	}
+	.mgb20 {
+		margin-bottom: 20px;
+	}
+</style>
+</head>
+<body>
+<!--
+	<div class="w3-content w3-center w3-margin-top mxw750">
+		<div class="dan w3-card-4">
+			<h3 class="w3-orange w3-padding mg0" >2단</h3>
+			<p class="mg0 mgt20">2 x 1 = 2</p>
+			<p class="mg0">2 x 2 = 4</p>
+			<p class="mg0">2 x 3 = 6</p>
+			<p class="mg0">2 x 4 = 8</p>
+			<p class="mg0">2 x 5 = 10</p>
+			<p class="mg0">2 x 6 = 12</p>
+			<p class="mg0">2 x 7 = 14</p>
+			<p class="mg0">2 x 8 = 16</p>
+			<p class="mg0 mgb20">2 x 9 = 18</p>
+		</div>
+	</div>
+-->
+<script type="text/javascript">
+	document.write('<div class="w3-content w3-center w3-margin-top mxw750">');
+	var dan = 2;
+	for(let l = 0 ; l < 8 ; l++ ) {
+		// 각단 시작
+		document.write('<div class="dan w3-card-4 mg10">');
+		document.write('<h3 class="'+ w3color[l] +' w3-padding mg0">' + dan + ' 단</h3>');
+		document.write('<div class="mgt20 mgb20">');
+		for(let i = 1 ; i < 10 ; i++ ) {
+			document.write('<p class="mg0">' + dan + ' x ' + i + ' = '+ (dan * i) +'</p>');
+		}
+		dan++;
+		document.write('</div>');
+		document.write('</div>');
+		// 각단 종료
+	}
+	document.write('</div>');
+</script>
+</body>
+</html>

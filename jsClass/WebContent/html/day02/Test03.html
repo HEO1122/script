@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<style type="text/css">
+	.box {
+		display: inline-block;
+		width: 150px;
+		height: 150px;
+		margin: 10px;
+	}
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<div class="w3-content w3-center mxw700">
+		<div class="w3-border box"></div>
+		<div class="w3-border box"></div>
+		<div class="w3-border box"></div>
+		<div class="w3-border box"></div>
+		<div class="w3-border box"></div>
+		<div class="w3-border box"></div>
+		<div class="w3-border box"></div>
+		<div class="w3-border box"></div>
+		<div class="w3-border box"></div>
+		<div class="w3-border box"></div>
+		<div class="w3-border box"></div>
+		<div class="w3-border box"></div>
+	</div>
+
+<script type="text/javascript">
+	document.getElementsByClassName('box')[0].onclick = function(){
+		/*
+			선택된 태그의 클래스 읽어오는 방법
+				
+			태그선택.classList
+			로 읽어오면 된다.
+			
+			선택된 태그의 클래스를 추가하는 방법
+				
+				태그선택.classList.add(클래스이름);
+			선택된 태그의 클래스 제거하는 방법
+				태그선택.classList.remove(클래스이름);
+			
+			선택된 태그가 특정클래스를 가지고 있는지 알아내는 방법
+				태그선택.classList.contains(클래스이름); ==> 반환값은 참 거짓으로 반환해준다.
+				
+		*/
+		var str = this.classList;
+		alert(str);
+	}
+</script>
+</body>
+</html>
