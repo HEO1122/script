@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	var city = [];
+	city[0] = 'Seoul';
+	city[1] = 'Busan';
+	city[2] = 'Inchun';
+	city[3] = 'Mokpo';
+	city[4] = 'Suwon';
+	
+	/*
+	var city = new Array('서울', '부산', '인천', '목포', '수원');
+	*/
+	function toPrint(){
+		for(i = 0 ; i < city.length ; i++ ){
+			document.write('배열데이터 [' + i + '] = ' + city[i] + '<br>');
+		}
+	}
+	
+	// join()
+	var joindata = city.join(' | ');
+	document.write('city : ' + joindata + '<br>');
+	document.write('joindata type : ' + (typeof joindata) + '<br>');
+	
+	
+	toPrint();
+	
+	document.write('city 의 타입 : ' + (typeof city) + '<br>');
+	document.write('Array.isArray(city) : ' + Array.isArray(city) + '<br>');
+	document.write('city instanceof Array : ' + (city instanceof Array) + '<br>');
+	document.write((city instanceof Array) ? 'city는 배열입니다.' : 'city는 배열이 아닙니다.');
+	
+	city.length = 1;
+	toPrint();
+</script>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

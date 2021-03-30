@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	/*
+	function abc(){
+		alert('나는 abc 함수!');
+	}
+	
+	var xyz = abc;
+	
+	xyz();
+	*/
+	
+	// 1부터 n 까지의 곱을 구해주는 함수를 만들어서 15까지의 펙토리얼을 출력하세요.
+	// 재귀호출함수 : 함수내에서 함수자신을 다시 호출하는 함수
+	function fac01(n){
+		// n * (n - 1) * (n - 2) * ...., 2, 1
+		if(n == 1){
+			return 1;
+		}
+		
+		return n * fac01(n-1);
+	}
+	
+	alert('1 부터 15까지의 곱 : ' + fac01(15));
+	
+</script>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

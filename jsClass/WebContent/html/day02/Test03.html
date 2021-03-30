@@ -14,23 +14,27 @@
 	}
 </style>
 <script type="text/javascript">
-
+	function func01(){
+		//document.querySelectorAll('div:nth-child(5)')[0].style.display = 'none';
+	}
 </script>
 </head>
-<body>
+<body onload="func01()">
 	<div class="w3-content w3-center mxw700">
-		<div class="w3-border box"></div>
-		<div class="w3-border box"></div>
-		<div class="w3-border box"></div>
-		<div class="w3-border box"></div>
-		<div class="w3-border box"></div>
-		<div class="w3-border box"></div>
-		<div class="w3-border box"></div>
-		<div class="w3-border box"></div>
-		<div class="w3-border box"></div>
-		<div class="w3-border box"></div>
-		<div class="w3-border box"></div>
-		<div class="w3-border box"></div>
+		<div class="w3-border box" id="box1"></div>
+		<div class="w3-border box" id="box2"></div>
+		<div class="w3-border box" id="box3"></div>
+		<div class="w3-border box" id="box4"></div>
+		<div id="d1">
+			<div class="w3-border box" id="box5"></div>
+			<div class="w3-border box" id="box6"></div>
+			<div class="w3-border box" id="box7"></div>
+			<div class="w3-border box" id="box8"></div>
+		</div><br>
+		<div class="w3-border box" id="box9"></div>
+		<div class="w3-border box" id="box10"></div>
+		<div class="w3-border box" id="box11"></div>
+		<div class="w3-border box" id="box12"></div>
 	</div>
 
 <script type="text/javascript">
@@ -51,8 +55,65 @@
 				태그선택.classList.contains(클래스이름); ==> 반환값은 참 거짓으로 반환해준다.
 				
 		*/
-		var str = this.classList;
-		alert(str);
+		var clslist = this.classList;
+
+		if(clslist.contains('w3-orange')){
+			clslist.remove('w3-orange');
+		} else {
+			clslist.add('w3-orange');
+		}
+	}
+	
+	document.getElementsByClassName('box')[0].ondblclick = function(){
+		if(this.classList.contains('w3-card-4')){
+			this.classList.remove('w3-card-4');
+		} else {
+			this.classList.add('w3-card-4');
+		}
+	}
+	
+	document.getElementsByClassName('box')[1].onmouseover = function(){
+		// 짝수번째 태그들을 선택
+		var els = document.querySelectorAll('.box:nth-child(2n)');
+		
+		// 배열 사이즈 알아내고
+		var len = els.length;
+		
+		// 배열에 담긴 태그 하나씩 꺼내서 처리한다.
+		for(let i = 0 ; i < len ; i++ ){
+			if(!els[i].classList.contains('w3-blue')){
+				els[i].classList.add('w3-blue');
+			}
+		}
+	}
+	
+	document.getElementsByClassName('box')[1].onmouseout = function(){
+		var els = document.querySelectorAll('.box:nth-child(2n)');
+		for(let i = 0 ; i < els.length ; i++ ){
+			if(els[i].classList.contains('w3-blue')){
+				els[i].classList.remove('w3-blue');
+			}
+		}
+	}
+	
+	
+	var els = document.querySelectorAll('#d1 > .box');
+	for(let i = 0 ; i < els.length ; i++ ){
+		els[i].onclick = function(){
+			/*
+				참고 ]
+					선택된 태그의 특정 속성값을 읽어오는 방법 ]
+						var 변수이름 = 태그선택.getAttribute('속성이름');
+						
+					선택된 태그의 속성값을 변경하는 방법 ]
+						태그선택.setAttribute('속성이름', '속성값');
+			*/
+			// 현재 태그의 아이디값을 읽어서 변수에 기억시키자.
+			var tid = this.getAttribute('id');
+			alert('클릭한 태그 아이디 : ' + tid );
+			var stl = this.style.border;
+			alert(stl);
+		}
 	}
 </script>
 </body>
