@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<div class="w3-content w3-center mxw650">
+		<h1 class="w3-deep-purple w3-card-4 w3-margin-top" id="h01">태그 내용 읽기 연습</h1>
+		
+		<div class="w3-col w3-card-4 w3-round-large w3-padding" id="d1">
+			<div class="w3-col" id="idfr">
+				<label for="id" class="w3-col m2 w3-padding w3-right-align">I D : </label>
+				<input type="text" name="id" id="id" class="w3-col m9 w3-input w3-border w3-border-orange"
+						placeholder="아이디를 입력하세요!" value="용수">
+			</div>
+			<div class="w3-col w3-margin-top" id="pwfr">
+				<label for="pw" class="w3-col m2 w3-padding w3-right-align">P W : </label>
+				<input type="password" name="pw" id="pw" class="w3-col m9 w3-input w3-border w3-border-orange"
+						placeholder="비밀번호를 입력하세요!">
+			</div>
+		</div>
+		<div class="w3-col w3-margin-top w3-margin-bottom w3-card-4">
+			<a class="w3-half w3-button w3-deep-orange w3-hover-lime" id="cbtn" onclick="cEvt()">취 소</a>
+			<a class="w3-half w3-button w3-blue w3-hover-aqua" id="rbtn">읽 기</a>
+			<a class="w3-half w3-button w3-amber" id="ibtn">id 읽기</a>
+			<a class="w3-half w3-button w3-purple" id="ebtn">비밀번호 메세지변경</a>
+		</div>
+		<div class="w3-row w3-margin-top" style="display: none;">
+			<h3 class="w3-col w3-text-purple" id="sid"></h3>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	/*
+		문제 ]
+			취소 버튼을 클릭하면 아이디 입력태그의 클래스 속성을 읽어서
+			경고창에 출력하도록 스크립트를 작성하세요.
+	*/
+	function cEvt(){
+		var sclass = document.getElementById('id').getAttribute('class');
+		alert('id 입력태그 클래스 속성 : ' + sclass);		
+	}
+			
+	// 1. 읽기 버튼을 클릭하면 클릭된 버튼의 id 속성값을 읽어서 출력하도록 하세요.
+	function func01(){
+		alert('읽기 버튼 id 속성 값 : ' + document.getElementById('rbtn').getAttribute('id'));
+	}
+	// 2. 읽기 버튼을 클릭하면 버튼의 id 속성을 'sBtn'으로 변경하는 클릭이벤트를 추가하세요.
+	function func02(){
+		// 태그 선택해서 변수에 기억시키고
+		var el = document.getElementById('rbtn');
+		// 태그 속성값 변경하고
+		el.setAttribute('id', 'sBtn');
+		// id 속성 꺼내서 출력하고
+		alert('[읽 기] 태그 id 속성 : ' + document.getElementById('sBtn').getAttribute('id'));
+/* 		alert('[읽 기] 태그 id 속성 : ' + el.getAttribute('id')); */
+	}
+	// 3. 읽기 버튼을 클릭하면 버튼의 내용을  '읽 기'를 '제출' 변경하는 클릭이벤트를 추가하세요.
+	function func03(){
+		// 태그 선택하고
+		var el = document.getElementById('rbtn');
+		el.innerHTML = '제출';
+		document.getElementById('id').focus();
+	}
+	
+//	document.getElementById('rbtn').onclick = func01;
+//	document.getElementById('rbtn').onclick = func02;
+//	document.getElementById('rbtn').onclick = func03;
+
+	document.getElementById('rbtn').onclick = func02;
+	
+	// id 읽기 버튼을 클릭하면 id입력태그의 입력내용을 읽어서 아이디가 sid인 태그에 기록하고 그 태그를 보여지도록 하세요.
+	document.getElementById('ibtn').onclick = function(){
+		// 입력내용읽어서 변수에 기억
+		var sid = document.getElementById('id').value;
+		// sid 태그에 기록한다.
+		document.getElementById('sid').innerHTML = sid;
+		// 상위 태그의 display 속성값을 변경
+		document.querySelectorAll('div[style="display: none;"]')[0].style.display = 'block';
+	}
+	
+	
+	// 비밀번호 메세지 변경 버튼을 클릭하면 메세지를 '밥주세요~~!' 로 변경하세요.
+	// sid 태그 아래에 비밀번호를 읽은 값을 출력하세요.
+	//	sid와 동일한 모양으로 보여지게 하세요.
+	document.getElementById('ebtn').onclick = function(){
+		document.getElementById('pw').setAttribute('placeholder', '밥주세요~~!');
+	}
+</script>
+</body>
+</html>
