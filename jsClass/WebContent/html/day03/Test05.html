@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript">
+	var data = [21, 42, 33, 14, 25, 12, 37, 28, 16, 11];
+	
+	// data 배열의 데이터중 20이상인 데이터만 추출해서 배열을 만들어보자.
+	function filterFunc(value){
+		return (value >= 20);
+	}
+	
+	var newData = data.filter(filterFunc);
+	document.write('<h5 class="w3-center w3-deep-orange">newData : ' + newData + '</h5>');
+	// 문제 newData를 내림차순 정렬해서 화면에 출력하세요.
+	// 1. 오름차순 정렬을 한다.
+	newData.sort();
+	// 2. 역정렬한다.
+	newData.reverse();
+	document.write('<h3 class="w3-center w3-deep-purple">newData : ' + newData + '</h3>');
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

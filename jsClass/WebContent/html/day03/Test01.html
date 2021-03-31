@@ -94,6 +94,32 @@
 	//	sid와 동일한 모양으로 보여지게 하세요.
 	document.getElementById('ebtn').onclick = function(){
 		document.getElementById('pw').setAttribute('placeholder', '밥주세요~~!');
+		
+		// 입력내용읽어서 변수에 기억
+		var sid = document.getElementById('id').value;
+		// sid 태그에 기록한다.
+		document.getElementById('sid').innerHTML = sid;
+		
+		// 태그 추가한다.
+		var stag = '<h3 class="w3-col w3-text-purple" id="spw"></h3>';
+		
+		// 상위태그 선택해서 태그 내용 읽고
+		var el = document.querySelectorAll('div[style="display: none;"]')[0];
+		
+		var cont = el.innerHTML;
+		cont = cont + stag;
+		
+		// 새롭게 만들어진 내용으로 교체한다.
+		el.innerHTML = cont;
+		
+		// 비밀번호 읽어오고
+		var spw = document.getElementById('pw').value;
+		
+		// id 가 spw인 태그 선택해서 데이터 채워주고
+		document.getElementById('spw').innerHTML = spw;
+		
+		// 상위태그를 보이게 만들어준다.
+		el.style.display = 'block';
 	}
 </script>
 </body>

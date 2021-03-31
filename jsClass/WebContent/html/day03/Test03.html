@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript">
+	var kdata = ['서울', '부산', '인천', '부천', '수원', '전주'];
+	
+	// 마지막 위치에 데이터 추가
+	var len = kdata.push('안산', '군포');
+	document.write('<h3 class="w3-blue">kdata : ' + kdata + '</h3>');
+	document.write('<h3 class="w3-indigo">kdata 길이 : ' + len + '</h3>');
+	
+	// 마지막 데이터 삭제
+	var delData = kdata.pop();
+	document.write('<h3 class="w3-purple">kdata : ' + kdata + '</h3>');
+	document.write('<h3 class="w3-deep-purple">delData : ' + delData + '</h3>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

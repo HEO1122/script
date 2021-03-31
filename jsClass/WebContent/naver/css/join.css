@@ -1,0 +1,51 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	font-size: 0pt;
+}
+
+.content {
+	display: inline-block;
+	width: 768px;
+}
+.head {
+	width: 100%;
+	text-align: center;
+}
+.logoBox {
+	display: inline-block;
+	width: 240px;
+	height: 44px;
+	padding: 60px 0px 20px;
+	text-align: center;
+}
+.tlogo {
+	display: inline-block;
+	/* border: 1px solid red; */
+	width: 240px;
+	height: 44px;
+	background-image: url("../img/m_naver_logo_20191126.png");
+	background-size: 242px auto;
+	background-repeat: norepeat; 
+	cursor: pointer;
+}
+.inBox {
+	display: inline-block;
+	width: 460px;
+	text-align: left;
+}
+.input01 {
+	display: inline-block;
+	width: 100%;
+	height: 51px;
+	border: 1px solid #dadada;
+}
+.inputTitle {
+	display: inline-block;
+	font-size: 14px;
+	width: 100%;
+	text-align: left;
+	
+	
+}

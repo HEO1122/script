@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript" src="../../js/w3color.js"></script>
+<script type="text/javascript">
+	var kdata = ['서울', '대구', '대전', '광주', '부산'];
+	kdata.forEach(function(item, index){
+		document.write('<h4>kdata[' + index + '] : ' + item + '</h4>');
+	});
+	
+	var func01 = function(item, index){
+		document.write('<h4 class="'+ w3color[index + 1] +'">kdata[' + index + '] : ' + item + '</h4>');
+	}
+	
+	var func0101 = function(item, index){
+		document.write('<h3 class="'+ w3color[index + 6] +' w3-padding">newData[' + index + '] : ' + item + '</h3>');
+	}
+	
+	kdata.forEach(func01);
+	
+	var result = '| ';
+	function func02(item, index){
+		result = result + item + ' | ';
+	}
+	
+	kdata.forEach(func02);
+	document.write('kdata : ' + result);
+	
+	function func03(value){
+		return value + '-시';
+	}
+	
+	var newData = kdata.map(func03);
+	newData.forEach(func0101);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
