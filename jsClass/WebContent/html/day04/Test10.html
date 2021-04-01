@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript">
+	// 데이터
+	var str = 'Html Css Jquery';
+	// 검색 패턴 정의하고 - 대소문자 구분
+	var reg1 = /css/;
+	// 검사한다.
+	var result1 = reg1.test(str);
+	document.write('<h1>문자열 : ' + str + '</h1>');
+	document.write('<h2>reg1 검사결과 : ' + result1 + '</h2>');
+	
+	var reg2 = /CSS/i;
+	var result2 = reg2.test(str);
+	document.write('<h2>reg2 검사결과 : ' + result2 + '</h2>');
+	
+	// 시작 지정
+	var reg3 = /^CSS/i; //  대소문자는 구분하지 않지만 반드시 css라는 문자열로 시작해야 한다.
+	var result3 = reg3.test(str);
+	document.write('<h2>reg3 검사결과 : ' + result3 + '</h2>');
+	
+	// 종료지점 지정
+	var reg4 = /CSS$/i;	// 대소문자는 구부하지 않지만 반드시 css라는 문장열로 끝나야 한다.
+	var result4 = reg4.test(str);
+	document.write('<h2>reg4 검사결과 : ' + result4 + '</h2>');
+	
+	var reg5 = /RY$/i;
+	var result5 = reg5.test(str);
+	document.write('<h2>reg5 검사결과 : ' + result5 + '</h2>');
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

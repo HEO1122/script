@@ -40,11 +40,19 @@
 //	alert(pramdata.age);
 	
 	
-	// forEach()를 이용해서 배열의 데이터를 아래 연관배열에 채워서 완성하세요...!
+	// 문제 ] forEach()를 이용해서 배열의 데이터를 아래 연관배열에 채워서 완성하세요...!
 	var arrData = {};
 	
+	function func02(item, index){
+		var key = item.substring(0, item.indexOf('='));
+		var value = item.substring(item.indexOf('=') + 1);
+		
+		arrData[key] = value;
+	}
 	
+	arr.forEach(func02);
 	
+	alert(arrData.age);
 	
 </script>
 </body>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript">
+	var userName = prompt('이름을 입력하세요!');
+	// 패턴만들고
+	var reg1 = /^[가-힣]{2,5}$/; // 한글 2 ~ 5글자
+	while(true){
+		if(reg1.test(userName)){
+			// 테스트에 통과한 경우
+			break;
+		} else {
+			alert('형식에 맞지 않은 이름입니다!\n다시입력하세요!');
+			userName = prompt('이름을 입력하세요!');
+		}
+	}
+	
+	var userCell = prompt('당신의 핸드폰 번호는?');
+	var reg2 = /^(010|011|016|019)-[0-9]{4}-\d{4}$/;
+	while(true){
+		if(reg2.test(userCell)) break;
+		alert('전화번호 형식이 맞지 않습니다.');
+		userCell = prompt('당신의 핸드폰 번호는?');
+	}
+	
+	// 이메일 정규표현식 검사
+	var userMail = prompt('메일 주소를 입력하세요!');
+	var reg3 = /^\w{5,12}@[a-z]{2,10}[\.][a-z]{2,3}[\.]?[a-z]{0,2}$/;
+	while(true){
+		if(reg3.test(userMail)) break;
+		
+		alert('메일 형식이 맞지 않습니다.');
+		userMail = prompt('메일 주소를 입력하세요!');
+	}
+	
+	document.write('<h1>Name : ' + userName + '</h1>');
+	document.write('<h1>Phone : ' + userCell + '</h1>');
+	document.write('<h1>eMail : ' + userMail + '</h1>');
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
