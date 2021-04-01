@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript">
+	var car = {
+			name: 'lamborghini',
+			speed: 50,
+			color: 'orange'
+	};
+</script>
+</head>
+<body>
+	<div class="w3-content mxw700 w3-center">
+		<h1 class="w3-deep-orange w3-card-4" id="ttl" style="cursor: pointer;">용수씨의 뇌물 목록</h1>
+		<div class="w3-col w3-card-4 w3-padding w3-margin-top">
+			<p class="w3-col w3-deep-purple" id="var1">전 깨끗합니다!</p>
+			<p id="var2"></p>
+			<p id="var3"></p>
+		</div>
+	</div>
+
+<script type="text/javascript">
+/*
+	var txt = document.getElementById('var1').innerHTML;
+	alert(txt);
+*/
+
+	document.getElementById('ttl').onclick = function(){
+		document.getElementById('var1').innerHTML = '용수씨의 첫번째 선물 : ' + car['name'];
+		document.getElementById('var2').innerHTML = '자동차 현재 속도 : ' + car.speed;
+		document.getElementById('var3').innerText = '자동차 색상 : ' + car.color;
+	}
+</script>
+</body>
+</html>

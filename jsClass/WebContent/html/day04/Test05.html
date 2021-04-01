@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<style type="text/css">
+	h4 {
+		margin: 0px;
+	}
+	.vpadding {
+		padding: 20px 0px;
+	}
+</style>
+<script type="text/javascript">
+	// 생성자 함수를 이용해서 객체를 만드는 방법
+	function Car(name, color, speed){
+		this.name = name;
+		this.color = color;
+		this.speed = speed;
+		// 함수 추가
+		this.speedUp = function(){
+			this.speed = this.speed + 10;
+			return this.speed;
+		}
+		this.speedDown = function(){
+			this.speed = this.speed - 20;
+			return this.speed;
+		}
+	}
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600 w3-center">
+		<h1 class="w3-deep-orange w3-padding w3-card-4">Class02 극과극</h1>
+		<div class="w3-col w3-card-4 w3-round-large w3-margin-top" style="padding: 10px;">
+			<div class="w3-border w3-border-orange vpadding">
+				<h4 class="w3-text-orange">Car Name : <span id="cname"></span></h4>
+				<h4 class="w3-text-orange">Car Speed : <span id="cspeed"></span></h4>
+				<h4 class="w3-text-orange">Car Color : <span id="ccolor"></span></h4>
+				<h4 class="w3-text-orange">Car upspeed : <span id="cup"></span></h4>
+			</div>
+		</div>
+		<div class="w3-col w3-card-4 w3-round-large w3-margin-top" style="padding: 10px;">
+			<div class="w3-border w3-border-blue vpadding">
+				<h4 class="w3-text-indigo">Car Name : <span id="cname1"></span></h4>
+				<h4 class="w3-text-indigo">Car Speed : <span id="cspeed1"></span></h4>
+				<h4 class="w3-text-indigo">Car Color : <span id="ccolor1"></span></h4>
+				<h4 class="w3-text-indigo">Car upspeed : <span id="cup1"></span></h4>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	var yunCar = new Car('Lamborghini', 'White', 240);
+	var ysCar = new Car('마티즈', 'pink', 250);
+	
+	// 수연씨 차 태그들 선택
+	var yname = document.getElementById('cname');
+	var yspeed = document.getElementById('cspeed');
+	var ycolor = document.getElementById('ccolor');
+	var yup = document.getElementById('cup');
+	
+	yname.innerHTML = yunCar.name;
+	yspeed.innerHTML = yunCar.speed;
+	ycolor.innerHTML = yunCar.color;
+	yup.innerHTML = yunCar.speedUp();
+	
+	// 용수씨 차 태그들 선택
+	var ysname = document.getElementById('cname1');
+	var ysspeed = document.getElementById('cspeed1');
+	var yscolor = document.getElementById('ccolor1');
+	var ysup = document.getElementById('cup1');
+	
+	ysname.innerHTML = ysCar.name;
+	ysspeed.innerHTML = ysCar.speed;
+	yscolor.innerHTML = ysCar.color;
+	ysCar.speedDown();
+	ysCar.speedDown();
+	ysCar.speedDown();
+	ysCar.speedDown();
+	ysCar.speedDown();
+	ysup.innerHTML = ysCar.speedDown() ;
+	
+</script>
+</body>
+</html>

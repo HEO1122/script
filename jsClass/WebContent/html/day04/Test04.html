@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript" src="../../js/w3color.js"></script>
+<script type="text/javascript">
+	// 먼저 Object를 이용해서 객체를 만든다.
+	var car = new Object();
+	// 필요한 속성을 추가한다.
+	car.name = 'Lamborghini';
+	car.speed = 100;
+	car.color = 'orange';
+	car.speedUp = function(){
+		this.speed = this.speed + 50;
+		return this.speed;
+	};
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600 w3-center">
+		<h1 class="w3-deep-orange w3-padding w3-card-4">Dream Car</h1>
+		<div class="w3-card-4 w3-padding w3-round-large">
+			<h4 class="w3-padding w3-text-orange">Car Name : <span id="cname"></span></h4>
+			<h4 class="w3-padding w3-text-orange">Car Speed : <span id="cspeed"></span></h4>
+			<h4 class="w3-padding w3-text-orange">Car Color : <span id="ccolor"></span></h4>
+			<h4 class="w3-padding w3-text-orange">Car upspeed : <span id="cup"></span></h4>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	var tname = document.getElementById('cname');
+	var tspeed = document.getElementById('cspeed');
+	var tcolor = document.getElementById('ccolor');
+	var tcup = document.getElementById('cup');
+	
+	tname.innerText = car.name;
+	tspeed.innerHTML = car['speed'];
+	tcolor.innerHTML = car['color'];
+	tcup.innerText = car.speedUp() + car.speedUp(); // <== 150 + 200
+</script>
+</body>
+</html>

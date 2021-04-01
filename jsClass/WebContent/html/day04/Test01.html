@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+</head>
+<body>
+	<div class="w3-content mxw600 w3-center">
+		<div class="w3-container" id="content">
+			<h2 class="w3-purple" id="txt">h2 Tag</h2>
+		</div>
+		<div class="w3-col">
+			<span class="w3-half w3-button w3-orange w3-hover-yellow w3-margin-top" id="hbtn">html</span>
+			<span class="w3-half w3-button w3-blue w3-hover-aqua w3-margin-top" id="tbtn">text</span>
+		</div>
+	</div>
+
+<script type="text/javascript">
+/*
+	버튼을 클릭하면
+	아이디가 content 인 태그의 내용을 읽어서
+	경고창에 띄워보자.
+ */
+ 	var txt1 = document.getElementById('content').innerHTML;
+ 	var txt2 = document.getElementById('content').innerText;
+ 	var txt3 = document.getElementById('content').textContent;
+ 	
+ 	alert('innerHTML : ' + txt1 + '\ninnerText : ' + txt2 + '\ntextContent : ' + txt3);
+ 	
+ 	// 버튼태그를 아이디로 선택하는 이외의 방법으로 선택하세요.
+ 	
+ 	/*
+ 	// 클래스로 선택하는 방법
+ 	var el1 = document.getElementsByClassName('w3-half')[0];
+ 	var el2 = document.getElementsByClassName('w3-half')[1];
+ 	*/
+ 	
+ 	/*
+ 	// 태그이름으로 선택하는 방법
+ 	var el1 = document.getElementsByTagName('span')[0];
+ 	var el2 = document.getElementsByTagName('span')[1];
+ 	*/
+ 	
+ 	/*
+ 	// css 선택자로 선택하는 방법
+ 	var el1 = document.querySelectorAll('div > span')[0];
+ 	var el2 = document.querySelectorAll('div > span')[1];
+ 	*/
+ 	
+ 	/*
+ 	// 아이디로 선택하는 방법
+ 	var el1 = document.getElementById('hbtn');
+ 	var el2 = document.getElementById('tbtn');
+ 	alert(el1.innerHTML + ' | ' + el2.innerHTML);
+ 	*/
+</script>
+</body>
+</html>
