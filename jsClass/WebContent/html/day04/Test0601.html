@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+</head>
+<body>
+	<div class="w3-content mxw600 w3-center">
+		<h1 class="w3-col w3-orange">여기는 Test0601 페이지</h1>
+		<div class="w3-row w3-margin-top">
+			<div class="w3-col w3-button w3-blue w3-hover-aqua" id="btn">이전페이지로...</div>
+		</div>
+	</div>
+	
+<script type="text/javascript">
+	var pdata = location.search;
+	// ==> '?id=ys&age=31'
+	pdata = pdata.substring(1); // ==> 'id=ys&age=31'
+	var arr = pdata.split('&');
+	
+//	alert(arr[0] + ' | ' + arr[1]);
+	
+	// 연관배열 변수선언 및 초기화
+	var pramdata = {};
+	for(i = 0 ; i < arr.length ; i++ ){
+		// 배열의 데이터 꺼내고
+		var str = arr[i];
+		// 키값 꺼내고
+		var key = str.substring(0, str.indexOf('='));
+		// 데이터꺼내고
+		var value = str.substring(str.indexOf('=') + 1);
+		
+		// 연관배열에 기억시키고...
+		pramdata[key] = value;
+	}
+	
+//	alert(pramdata['id']);
+//	alert(pramdata.age);
+	
+	
+	// forEach()를 이용해서 배열의 데이터를 아래 연관배열에 채워서 완성하세요...!
+	var arrData = {};
+	
+	
+	
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

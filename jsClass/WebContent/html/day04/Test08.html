@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript">
+	var str = '곽채원씨에게 반장수락을 의뢰했더니 퇴짜맞았습니다.';
+	var substr = str.substring(str.indexOf(' ') + 1, str.lastIndexOf(' ') - 1);
+	var slicestr = str.slice(str.indexOf(' ') + 1, str.lastIndexOf(' ') - 1);
+	var replaceStr = str.replace(' ', '#');
+	document.write('<h2 class="w3-lime w3-center w3-padding">'+ substr + '</h2>');
+	document.write('<h2 class="w3-amber w3-center w3-padding">'+ slicestr + '</h2>');
+	document.write('<h2 class="w3-orange w3-center w3-padding">'+ replaceStr + '</h2>');
+	document.write('<h2 class="w3-blue w3-center w3-padding">'+ str + '</h2>');
+	
+	var ch = str.match('더니');
+	if(!ch){
+		document.write('<h2 class="w3-red w3-center w3-padding">str 에는 "a" 문자가 없습니다.</h2>');
+	} else {
+		alert('ch : ' + ch);
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
