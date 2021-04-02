@@ -39,7 +39,7 @@
 					
 					form태그선택.submit();
 		-->
-		<form id="frm" name="frm" method="GET" action="Ex01Data.html"
+		<form id="frm" name="frm" method="POST" action="Ex01Data.html"
 			class="w3-container w3-margin-top w3-card-4">
 			
 			<div class="w3-row w3-margin-top">
@@ -91,8 +91,89 @@
 		a.classList.add('w3-border-grey');
 	}
 	
+	document.getElementById('rbtn').onclick = function(){
+		/*
+		// 입력태그에 각각 접근해서 내용을 지우는 방식
+		document.getElementById('id').value = '';
+		document.getElementById('pw').value = '';
+		document.getElementById('body').value = '';
+		*/
+		
+		// form태그를 선택해서 함수 호출하는 방법
+		// form 객체의 reset() 호출...
+		document.getElementById('frm').reset();
+//		document.frm.reset();
+	}
 	
-	// 옵션 ] 아이디, 비밀번호 정규식 검사...
+	// 제출버튼 이벤트 추가
+	document.getElementById('sbtn').onclick = function(){
+		// 데이터 유효성 검사
+		// 입력된 데이터 읽고
+		var sid = document.getElementById('id').value;
+		var spw = document.getElementById('pw').value;
+		var sbody = document.getElementById('body').value;
+		sbody = sbody.trim();
+		
+		/*
+			참고 ]
+				태그내에 데이터 읽는 방법 ]
+					1. 일반태그
+						태그선택.innerHTML;
+						태그선택.innerText;
+						태그선택.textContent;
+						
+					2. 입력태그
+						태그선택.value;
+					
+				태그에 데이터 입력하는 방법 ]
+					1. 일반태그
+						태그선택.innerHTML = 데이터;	<== 태그를 해석해서 넣는 방법
+						태그선택.innerText = 데이터;	<== 태그를 문자로 처리해서 넣는 방법
+						태그선택.textContent = 데이터;	<== 태그를 문자로 처리해서 넣는 방법
+						
+					2. 입력태그
+						태그선택.value = 데이터;
+		*/
+		
+		// 입력태그의 내용이 하나라도 비어있는 태그가 있으면 제출하면 안된다.
+		if(!(sid && spw && sbody)) {
+			// 세변수중 하나라도 비어있는 변수가 있으면 이블럭을 실행하세요...!
+			alert('필수입력 내용을 확인하세요!');
+			// 이경우는 비어있는 태그에 데이터를 채워야 하므로 즉시 이함수를 종료해야 한다.
+			return;
+		}
+		
+		// 옵션 ] 아이디, 비밀번호 정규식 검사...
+		// 정규식 검사 - 해주세요~~~! 제발요~~~!
+		var id_reg = /^[a-zA-Z][a-zA-Z0-9]{1,7}$/;
+		if(!id_reg.test(sid)){
+			alert('아이디 형식이 맞지않습니다.');
+			// 아이디입력태그에 내용을 지우고 입력대기상태로 되게 한다.
+			document.getElementById('id').value = '';
+			document.getElementById('id').focus();
+			// 이 함수 실행을 종료한다.
+			return;
+		}
+		
+		// 비밀번호 정규식 검사
+		var pw_reg = /^[a-zA-Z0-9]{4,8}$/;
+		if(!pw_reg.test(spw)){
+			alert('비밀번호 형식에 맞지않습니다.');
+			// 비밀번호 입력태그에 내용을 지우고 입력대기상태로 되게 한다.
+			document.getElementById('pw').value = '';
+			document.getElementById('pw').focus();
+			// 이 함수 실행을 종료한다.
+			return;
+		}
+		
+		// 내용 인코딩
+		document.getElementById('body').value = encodeURI(sbody);
+		
+		// 정규식 검사를 통과하면 form 태그를 제출(submit)한다.
+		document.getElementById('frm').submit();
+		// ==> form 태그를 전송하는 방법
+	}
+	
 </script>
 </body>
 </html>

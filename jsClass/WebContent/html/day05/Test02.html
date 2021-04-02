@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript" src="../../js/w3color.js"></script>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	var today = new Date();
+	
+	function getKDay(num){
+		var str = '';
+		switch(num){
+		case 0:
+			str = '일요일';
+			break;
+		case 1:
+			str = '월요일';
+			break;
+		case 2:
+			str = '화요일';
+			break;
+		case 3:
+			str = '수요일';
+			break;
+		case 4:
+			str = '목요일';
+			break;
+		case 5:
+			str = '금요일';
+			break;
+		case 6:
+			str = '토요일';
+			break;
+		}
+		
+		return str;
+	}
+	
+	document.write('<h3>' + today + '</h3>');
+	document.write('<h3>' + new Date(1491803527400) + '</h3>');
+	document.write('<h3>위의 today : ' + today + '</h3>');
+	
+	document.write('<h3>문자열 날짜 : ' + new Date('Apr 02 2021 14:50:11') + '</h3>');
+	// 년도, 월, 일, 시, 분, 초 를 입력해서 날짜 데이터를 만드는 방법
+	document.write('<h3>년월일시분초 : ' + new Date(2021, 03, 02, 14, 55, 55) + '</h3>'); 
+	
+	document.write('<div class="w3-content mxw600">');
+	document.write('<h2 class="'+ w3color[0] +'">오늘 날짜 : ' + today.getDate() + '</h2>' );
+	document.write('<h2 class="'+ w3color[1] +'">오늘 요일 : ' + 
+								today.getDay() + ' - ' + getKDay(today.getDay()) + '</h2>' );
+	document.write('<h2 class="'+ w3color[2] +'">이번달 : ' + (today.getMonth() + 1) + '</h2>' );
+	document.write('</div>');
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

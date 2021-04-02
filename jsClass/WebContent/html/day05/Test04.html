@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<style type="text/css">
+	html, body {
+		margin: 0px;
+		padding: 0px;
+		text-align: center;
+	}
+	.timeBox {
+		display: inline-block;
+		margin-top: 100px;
+		font-size: 16pt;
+		font-weight: bold;
+	}
+</style>
+</head>
+<body>
+	<div id="digiClock" class="timeBox w3-deep-purple w3-center w3-padding"></div>
+
+<script type="text/javascript">
+	function digiClock(){
+		var today = new Date();
+		var day = today.getMonth() + 1 + '월 ' + today.getDate() + '일 ';
+		var time = today.getHours() + '시 ' + today.getMinutes() + '분 ' +
+					today.getSeconds() + '초';
+		
+		// 태그에 기록
+		document.getElementById('digiClock').innerHTML = day + time;
+	}
+	
+	setInterval('digiClock()', 1000);
+</script>
+</body>
+</html>

@@ -25,6 +25,9 @@
 </style>
 </head>
 <body>
+	<form method="" action="" id="frm" name="frm">
+	
+	</form>
 	<div class="w3-content mxw650">
 		<h1 class="w3-deep-orange w3-center w3-card-4 w3-round-large">방명록 내용</h1>
 		
@@ -58,42 +61,13 @@
 		
 		<!-- 버튼 -->
 		<div class="w3-row w3-margin-top w3-card-4">
-			<div class="w3-half w3-button w3-green w3-hover-lime" id="pre">이 전</div>
 			<div class="w3-half w3-button w3-blue w3-hover-aqua" id="show">데이터 읽기</div>
+			<div class="w3-half w3-button w3-green w3-hover-lime" id="send">데이터 전송</div>
 		</div>
 	</div>
 
 <script type="text/javascript">
-	/*
-		파라미터로 전달 된 데이터를 꺼내서 아이디, 비밀번호, 글내용 표시태그에 넣어서 
-		처리하세요.
-	*/
 	
-	/*
-		웹브라우저의 URL 표시줄의 인코딩 방식은 Base64 방식을 사용한다.
-		따라서 GET 방식으로 전달되는 파라미터의 내용을 정상적으로 볼려면
-		우리가 사용하는 UTF-8방식으로 다시 표현해야 한다.
-		
-		작업 순서 ]
-			1. 
-			보내는 쪽에서 데이터를 유니코드로 만들어서 전송한다.
-				태그선택.value = encodeURI(데이터);
-				form태그선택.submit();
-				
-			2.
-				받는 쪽에서는 보내온 코드(유니코드)를 디코딩해서 사용하면 된다.
-				주의사항으로
-					유니코드에 시작코드 % 문자도 유니코드로 변환되서 전달되기 때문에
-					%를 먼저 디코딩하고 
-					만들어진 코드를 다시 디코딩한다.
-					
-				참고 ]
-					입력할 때 사용한 줄바꿈 엔터키는
-					HTML 문서에서 표현할 때 공백문자 하나로 표현이 되기때문에
-					입력모양으로 보이게 하려면
-					줄바꿈 기호를 <br> 태그로 변경시켜서 표현해주면 된다.
-			
-	*/
 	var sparam = decodeURI(decodeURI(location.search)).substring(1);
 	sparam = sparam.replace('\n', '<br>');
 	
@@ -105,8 +79,8 @@
 		parr[item.substring(0, item.indexOf('='))] = item.substring(item.indexOf('=') + 1);
 	});
 	
-	document.getElementById('pre').onclick = function(){
-		location.href = 'Ex01.html'; // GET 방식으로 요청 하는 방법
+	document.getElementById('send').onclick = function(){
+		
 	}
 	
 	// 읽기 버튼 이벤트 추가

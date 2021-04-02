@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<style type="text/css">
+	.pdl20 {
+		padding-left: 20px;
+	}
+	.nooutline {
+		outline: none;
+	}
+	label {
+		font-size: 12pt;
+		font-weight: bold;
+		line-height: 200%;
+		opacity: 0.7;
+	}
+</style>
+</head>
+<!--
+	제출버튼을 클릭하면 
+	화면에 표시되는 입력태그들의 내용을 읽어서
+	form 태그에 채우고 전송하도록 하세요.
+-->
+<body>
+	<form id="frm" name="frm" method="POST" action="Ex01Data.html">
+		<input type="hidden" name="id" id="id">
+		<input type="hidden" name="pw" id="pw">
+		<input type="hidden" name="body" id="body">
+	</form>
+	
+	<div class="w3-content mxw650">
+		<h1 class="w3-deep-orange w3-center w3-card-4">방명록 작성</h1>
+		
+		<div class="w3-container w3-margin-top w3-card-4">
+			
+			<div class="w3-row w3-margin-top">
+				<div class="w3-col m2 w3-right-align">
+					<label for="tid" class="w3-text-grey">아이디 : </label>
+				</div>
+				<div class="w3-col m8 pdl20">
+					<input type="text" id="tid" name="tid" placeholder="아이디를 입력하세요!"
+							class="w3-col w3-input w3-border w3-border-grey nooutline" 
+							onfocus="focsIn(this)" onblur="focsOut(this)">
+				</div>
+			</div>
+			<div class="w3-row w3-margin-top">
+				<div class="w3-col m2 w3-right-align">
+					<label for="tpw" class="w3-text-grey">비밀번호 : </label>
+				</div>
+				<div class="w3-col m8 pdl20">
+					<input type="password" id="tpw" name="tpw" placeholder="비밀번호를 입력하세요!"
+							class="w3-col w3-input w3-border w3-border-grey nooutline" 
+							onfocus="focsIn(this)" onblur="focsOut(this)">
+				</div>
+			</div>
+			<div class="w3-row w3-margin-top w3-margin-bottom">
+				<div class="w3-col m2 w3-right-align">
+					<label for="tbody" class="w3-text-grey">글 쓰 기 : </label>
+				</div>
+				<div class="w3-col m8 pdl20">
+					<textarea name="tbody" id="tbody" class="w3-col w3-border-grey nooutline" 
+								rows="12" style="resize: none;" placeholder="방명록글을 작성하세요!"
+								onfocus="focsIn(this)" onblur="focsOut(this)"></textarea>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 버튼 -->
+		<div class="w3-row w3-margin-top w3-card-4">
+			<div class="w3-half w3-button w3-lime w3-hover-green" id="rbtn">리셋</div>
+			<div class="w3-half w3-button w3-blue w3-hover-pink" id="sbtn">제출</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	function focsIn(a){
+		a.classList.remove('w3-border-grey');
+		a.classList.add('w3-border-blue');
+	}
+	function focsOut(a){
+		a.classList.remove('w3-border-blue');
+		a.classList.add('w3-border-grey');
+	}
+	
+	document.getElementById('rbtn').onclick = function(){
+
+	}
+	
+	// 제출버튼 이벤트 추가
+	document.getElementById('sbtn').onclick = function(){
+		
+	}
+	
+</script>
+</body>
+</html>

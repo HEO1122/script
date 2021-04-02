@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<style type="text/css">
+	body {
+		text-align: center;
+	}
+</style>
+<script type="text/javascript">
+	function random(no1, no2){
+		var num = parseInt(Math.random() * (no2 - no1 + 1) + no1);
+		return num;
+	}
+	
+	// 다섯자리 숫자로 된 인증번호 만들어주는 함수
+	function autho(){
+		var str = "";
+		for(i = 0 ; i < 5 ; i++ ){
+			var no = random(0, 9);
+			str = str + no;
+		}
+		
+		document.write('인증번호 : ' + str);
+	}
+	
+	autho();
+//	document.write('랜덤한 숫자 : ' + random(1, 10));
+</script>
+</head>
+<body>
+
+	<div class="w3-content mxw600">
+		<h3 class="w3-blue w3-button w3-center" id="refresh">refresh</h3>
+	</div>
+<script type="text/javascript">
+	document.getElementById('refresh').onclick = function(){
+		location.reload();
+	}
+</script>
+</body>
+</html>
