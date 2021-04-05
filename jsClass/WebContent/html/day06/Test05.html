@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+ varmy_div = null;
+ varnewDiv = null;
+ 
+ function addElement(){
+  //새로운div엘리먼트생성
+  //내용을작성
+  newDiv=document.createElement("div");
+  newDiv.innerHTML="<h1>안녕!반가워!</h1>";
+  //생성된엘리먼트를추가
+  my_div=document.getElementById("org_div1");
+  document.body.insertBefore(newDiv,my_div);
+ }
+</script>
+<body onload="addElement()">
+	<div id='org_div1'>위의문장은동적으로만들어진것입니다.</div>
+</body>
+</html>

@@ -19,3 +19,16 @@
 .mxw800 {
 	max-width: 800px;
 }
+
+/* 패딩 클래스*/
+.pdl10 {
+	padding-left: 10px;
+}
+.pdl20 {
+	padding-left: 20px;
+}
+
+.pdv30 {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}

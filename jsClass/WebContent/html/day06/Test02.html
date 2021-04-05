@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript">
+	var intv;
+	function func01(){
+		
+		function timeOut(){
+			var today = new Date();
+			var el = document.getElementById('test');
+			var content = el.innerHTML;
+			el.innerHTML = content + 
+						'<h2 class="w3-center w3-blue w3-padding">' + today.toLocaleString() + '</h2>';
+		}
+		
+		document.getElementById('out').onclick = function(){
+			setTimeout(timeOut, 3000);
+		}
+		
+		document.getElementById('interval').onclick = function(){
+			intv = setInterval(timeOut, 1000);
+		};
+		
+		/*
+			참고 ]
+				setInterval() 함수는 일정간격 기준으로 계속 반복해서 실행하는 함수이다.
+				
+				이때 이 반복을 멈출수 있는 방법은 
+					clearInterval(함수이름);
+		*/
+		
+		document.getElementById('stop').onclick = function(){
+			clearInterval(intv);
+		}
+	}
+</script>
+</head>
+<body onload="func01()">
+	<div class="w3-content mxw600">
+		<div class="w3-col">
+			<div class="w3-third w3-red w3-button" id="out">setTimeout</div>
+			<div class="w3-third w3-orange w3-button" id="interval">setInterval</div>
+			<div class="w3-third w3-purple w3-button" id="stop">clearInterval</div>
+		</div>
+		<div class="w3-col w3-margin-top" id="test"></div>
+	</div>
+</body>
+</html>

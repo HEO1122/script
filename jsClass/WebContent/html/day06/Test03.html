@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+</head>
+<body>
+	<div class="w3-content mxw600">
+		<div class="w3-col w3-margin-top">
+			<div class="w3-col m2 w3-button w3-red" id="open1">open1</div>
+			<div class="w3-col m2 w3-button w3-pink" id="open2">open2</div>
+			<div class="w3-col m2 w3-button w3-purple" id="open3">naver</div>
+			<div class="w3-col m2 w3-button w3-deep-purple" id="mv1">move</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	var win1;
+	win1 = window.open('Test01.html', 'test01', 'menubar=yes,status=yes,scrollbar=yes,resizable=no,width=1000,height=600,top=150,left=150');
+	document.getElementById('open1').onclick = function(){
+		window.open('Test02.html');
+	}
+	
+	document.getElementById('open2').onclick = function(){
+		window.open('Test01.html', 'test01', 'menubar=yes,status=yes,scrollbar=yes,resizable=no,width=1000,height=600,top=150,left=150');
+	}
+	
+	document.getElementById('open3').onclick = function(){
+		window.open('http://www.naver.com', 'naver', 'menubar=yes,status=yes,scrollbar=yes,resizable=no,width=1000,height=600,top=150,left=150');
+	}
+	
+	document.getElementById('mv1').onclick = function(){
+		win1.moveTo(100, 100);
+	}
+	
+</script>
+</body>
+</html>
