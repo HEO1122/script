@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<!-- CDN 방식 -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// ==> document 가 준비가 되면 매개변수로 입력한 함수를 실행하세요...
+		//var str = $('#title1').html();
+		
+		var el = $('#title1');
+		
+		var el1 = document.getElementById('title1');
+		
+		var str = $(el1).html();
+		alert(str);
+	});
+	
+	/*
+		jQuery 라는 함수가 문장이 길어서 
+		내부적으로 별칭을 만들어 준것이
+			J
+			$
+		등이 있다.
+		
+		---------------------------------------------------------------------------------------------------
+		
+		제이쿼리 사용방법 ]
+			
+			스크립트 태그 내에
+				1.
+					$(document).ready(function(){
+						필요한 코드 작성....
+					});
+			
+				2.
+					$(function(){
+						필요한 코드 작성....
+					});
+				
+				<==
+					$()	==> 제이쿼리 함수를 호출하는 것이다.( $ <== jQuery 별칭이다.)
+					
+					==> 제이쿼리 함수는 선택한 요소의 객체를 반환해준다.
+					
+		참고 ]
+			
+			제이쿼리 함수는 매개변수로 입력된 요소의 객체를 반환해준다.
+			이때 자바스크립 객체와 제이쿼리 객체는 서로 호환되지 않는다.
+		
+	*/
+/* 	jQuery(document).ready(function(){
+		// ==> document 가 준비가 되면 매개변수로 입력한 함수를 실행하세요...
+		var str = $('#title1').html();
+		alert(str);
+	}); */
+	
+	
+	/*  
+	$(document).ready(function(){
+		var str = $('#title1').html();
+		alert(str);
+	});
+	*/
+	
+	/* 
+		jQuery 기본 형식 ]
+			
+			$(선택자).함수();
+			
+			==> 
+				1. 이때 선택자는 자바스크립트 객체를 넣어줘도 되고
+				2. 문자열로 CSS 선택자를 입력해도 된다.
+	
+	*/
+	
+	$(document).ready(function(){
+		/*
+		var sid = $(document.frm.id).val();
+		alert('sid : ' + sid);
+		*/
+		
+		$('.w3-button').css('background-color', 'blue');
+		
+		$('.w3-button').click(function(){
+			var tname = $(this).html();
+			alert(tname);
+		});
+	});
+				
+				
+</script>
+</head>
+<body>
+	<form name="frm">
+		<input type="hidden" name="id" value="ys">
+	</form>
+	<div class="w3-content mxw600">
+		<h1 class="w3-amber w3-center" id="title1">jQuery 1st Page</h1>
+		
+		<div class="w3-col">
+			<div class="w3-col m2 w3-button">btn1</div>
+			<div class="w3-col m2 w3-button">btn2</div>
+			<div class="w3-col m2 w3-button">btn3</div>
+		</div>
+	</div>
+	<!-- 
+		jQuery
+			==> 함수들로 구성된 자바스크립트 라이브러리...
+				
+				
+		jQuery 사용하는 방법 ]
+			
+			1. 라이브러리를 문서에 포함시킨다.
+			2. script 태그에 제이쿼리 함수를 호출하면 된다.
+	 -->
+</body>
+</html>
