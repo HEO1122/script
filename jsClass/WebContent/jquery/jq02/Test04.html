@@ -19,7 +19,8 @@
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
-		var el = $('.mxw600').children();
+		var el = $('.mxw600 *:gt(6)');
+/* 		var el = $('.mxw600').children().not('span'); */
 		for(i = 0 ; i < el.length ; i++ ){
 			$(el).eq(i).addClass(w3color[i]);
 			$(el).eq(i).addClass('w3-margin-top');
@@ -30,6 +31,8 @@
 //		$('h3').eq(0).css('border', '5px dotted Turquoise');
 		
 		$('.mxw600 > *:odd').css('border', '2px solid red');
+		
+		$('span:lt(4)').css('background-color', 'blue');
 	});
 </script>
 </head>
