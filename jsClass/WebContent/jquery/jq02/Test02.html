@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../js/w3color.js"></script>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// w3-button 클래스 태그에 w3 칼라 클래스를 추가해주자.
+		var el = $('.w3-button');
+		
+		for(i = 0 ; i < el.length ; i++ ){
+			$(el).eq(i).addClass(w3color[i]);
+			$(el).eq(i).addClass('w3-margin-bottom');
+		}
+		
+		var func01 = function(){
+			var txt = $(this).html();
+			alert("버튼내용 : " + txt);
+			
+			$('.w3-content').append(
+					'<div class="inblock m3 w3-button w3-blue w3-margin-bottom w3-margin-left">추가버튼</div>');
+		};
+		
+		// 버튼 클릭 이벤트 등록
+		$(el).click(func01);
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600 w3-center">
+		<div class="inblock m3 w3-button w3-margin-left">btn1</div>
+		<div class="inblock m3 w3-button w3-margin-left">btn2</div>
+		<div class="inblock m3 w3-button w3-margin-left">btn3</div>
+		<div class="inblock m3 w3-button w3-margin-left">btn4</div>
+		<div class="inblock m3 w3-button w3-margin-left">btn5</div>
+		<div class="inblock m3 w3-button w3-margin-left">btn6</div>
+		<div class="inblock m3 w3-button w3-margin-left">btn7</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+	label {
+		font-size: 16pt;
+		line-height: 200%;
+	}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#file').change(function(e){
+			var el = URL.createObjectURL(e.target.files[0]);
+			var fname = $(this).val();
+			fname = fname.substring(fname.lastIndexOf('\\') + 1);
+			$('#img1').attr('src', el);
+			$('#fname').html(fname);
+			$('.w3-hide').removeClass('w3-hide');
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw650">
+		<h1 class="w3-orange w3-card-4 w3-round-large w3-padding w3-center w3-margin-top w3-margin-bottom">Images</h1>
+		<div class="w3-col w3-card-r w3-round-large w3-padding w3-margin-bottom">
+			<label for="file" class="w3-col m2 w3-text-grey">image : </label>
+			<input type="file" name="file" id="file" class="w3-col m8 w3-input w3-border pdl20">
+		</div>
+		<div class="w3-col w3-center w3-hide">
+			<div class="inblock w250 w3-card-4 w3-center">
+				<div class="inblock imgBox230 w3-border">
+					<img id="img1" alt="image" src="" class="inblock img210">
+				</div>
+				<div class="w3-col w3-lime w3-border-top">
+					<h5 class="w3-col w3-center w3-text-grey" id="fname"></h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

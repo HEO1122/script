@@ -20,6 +20,11 @@
 	max-width: 800px;
 }
 
+/* 디스플레이 */
+.inblock {
+	display: inline-block;
+}
+
 /* 패딩 클래스*/
 .pdl10 {
 	padding-left: 10px;
@@ -31,4 +36,20 @@
 .pdv30 {
 	padding-top: 30px;
 	padding-bottom: 30px;
+}
+
+/* size */
+.w250 {
+	width: 250px;
+}
+.imgBox230 {
+	width: 230px;
+	height: 230px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+.img210 {
+	width: 230px;
+	height: auto;
 }
