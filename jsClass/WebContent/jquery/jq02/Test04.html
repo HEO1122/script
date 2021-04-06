@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../js/w3color.js"></script>
+<style type="text/css">
+/* 	h3:first {
+		border: 5px dotted Turquoise;
+	} */
+	span {
+		display: inline-block;
+		width: 150px;
+		height: 30px;
+	}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var el = $('.mxw600').children();
+		for(i = 0 ; i < el.length ; i++ ){
+			$(el).eq(i).addClass(w3color[i]);
+			$(el).eq(i).addClass('w3-margin-top');
+		}
+		
+		// 첫번째 h3 태그의 보더를 주자
+		$('h3:first').css('border', '5px dotted Turquoise');
+//		$('h3').eq(0).css('border', '5px dotted Turquoise');
+		
+		$('.mxw600 > *:odd').css('border', '2px solid red');
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600">
+		<span>sp1</span>
+		<span>sp2</span>
+		<span>sp3</span>
+		<span>sp4</span>
+		<span>sp5</span>
+		<span>sp6</span>
+		<span>sp7</span>
+		<div class="w3-col">첫번째 div</div>
+		<h3 class="w3-col">첫번째 h3</h3>
+		<h3 class="w3-col">두번째 h3</h3>
+		<div class="w3-col">두번째 div
+			<h3 class="w3-col">div 아래 첫번째 h3</h3>
+			<h3 class="w3-col">div 아래 두번째 h3</h3>
+		</div>
+		<div class="w3-col">세번째 div</div>
+	</div>
+</body>
+</html>
