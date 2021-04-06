@@ -25,7 +25,28 @@
 	display: inline-block;
 }
 
+/* 마진 클래스 */
+.mgt10 {
+	margin-top: 10px;
+}
+.mgt20 {
+	margin-top: 20px;
+}
+.mgl10 {
+	margin-left: 10px;
+}
+.mgl20 {
+	margin-left: 20px;
+}
+
 /* 패딩 클래스*/
+.pdAll20 {
+	padding: 20px;
+}
+
+.pdt10 {
+	padding-top: 10px;
+}
 .pdl10 {
 	padding-left: 10px;
 }
