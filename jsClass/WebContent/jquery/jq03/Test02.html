@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// 문제 1] 내용이 div1인 태그를 선택해서 w3-green 클래스를 추가해주세요.
+		
+		var txt ;
+		
+		var el = $('div');
+		$(el).first().addClass('w3-border w3-card-4 w3-padding');
+//		$(el).eq(1).addClass('w3-green');
+
+//		$('.mxw600 > div:first').addClass('w3-green');
+//		$('.mxw600 > div:nth-child(1)').addClass('w3-green');
+		$('.mxw600 > *:eq(0)').addClass('w3-green');
+		
+		// 1.
+		$('.mxw600 > div:first').css('width', '120px');
+		$('.mxw600 > div:first').css('height', '120px');
+		$('.mxw600 > div:first').css('display', 'inline-block');
+		$('.mxw600 > div:first').css('border', '2px solid MediumPurple');
+		
+		// 2.
+		var el = $('.mxw600 > div');
+		
+		$(el).eq(1).css('display', 'inline-block');
+		$(el).eq(1).css('width', '100px');
+		$(el).eq(1).css('height', '100px');
+		$(el).eq(1).css('border-radius', '50%');
+		$(el).eq(1).css('border', '3px solid grey');
+		$(el).eq(1).addClass('w3-card-4');
+		
+		// 3.
+		$(el).eq(2).addClass('w3-blue');
+		
+		// 4.
+		$(el).eq(3).addClass('w3-card-4');
+		$(el).eq(3).css('height', '30px');
+		$(el).eq(3).css('border', '3px solid rgba(120, 120, 120, 0.3)');
+		
+		// 5.
+		$(el).last().html('블럭영역태그5');
+		
+		
+		$('.mxw600 > div:contains("div1")').html('블럭영역태그1');
+		
+//		$(el).content().addClass('w3-card-4');
+
+		$('.mxw600 > div:has(h4)').toggleClass('w3-blue');
+		$('.mxw600 > div:has(h4)').toggleClass('w3-deep-orange');
+		
+//		$('.mxw600 > div').filter('w3-card-4').addClass('w3-indigo');
+
+		$('.mxw600 *').find('h4').css('font-size', '24pt');
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600 w3-center">
+		<div>div1</div> <!-- 가로세로 120 정사각형 -->
+		<div>div2</div>	<!-- 반지름 100 원으로 -->
+		<div><h4>div3</h4></div> <!-- 배경색을 w3-blue로  -->
+		<div>div4</div>	<!-- w3-card-4 높이는 30픽셀 -->
+		<div>div5</div>	<!-- 입력내용을 div5 ==> 블럭영역태그5 로 변경 -->
+	</div>
+</body>
+</html>

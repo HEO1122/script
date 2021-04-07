@@ -7,12 +7,15 @@
 <link rel="stylesheet" type="text/css" href="../../css/user.css">
 <script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
 <style type="text/css">
-	
+	select {
+		width: 200px;
+		height: 30px;
+	}
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
 		// input 태그 클래스 추가
-		$('input').addClass('w3-col m8 w3-input');
+		$('input:text').addClass('w3-col m8 w3-input');
 		
 		$(':text').addClass('w3-input w3-border');
 		
@@ -27,36 +30,33 @@
 			$(':checkbox').parent().css('color', 'black');
 			$(':checkbox:checked').parent().css('color', 'orange');
 		});
-		
-		$('#sub').change(function(){
-			$('option').css('color', 'black');
-			$('option:selected').css('color', 'purple');
-		});
 	});
 </script>
 </head>
 <body>
-	<div class="w3-content mxw600">
+	<div class="w3-content mxw600 w3-margin-top">
 		<div class="w3-col">
 			<label for="id" class="w3-col m2 w3-text-grey">아이디 : </label>
 			<input type="text" name="id" id="id">
 		</div>
 		<div class="w3-col w3-margin-top">
 			<label class="w3-col m2 w3-text-grey">주 소 : </label>
-			<div class="w3-col m2">
-				<input type="checkbox" name="addr" value="서울" checked >서울
-			</div>
-			<div class="w3-col m2">
-				<input type="checkbox" name="addr" value="경기" >경기
-			</div>
-			<div class="w3-col m2">
-				<input type="checkbox" name="addr" value="인천" >인천
-			</div>
-			<div class="w3-col m2">
-				<input type="checkbox" name="addr" value="수원" >수원
-			</div>
-			<div class="w3-col m2">
-				<input type="checkbox" name="addr" value="전주" >전주
+			<div class="w3-col m10">
+				<div class="w3-col">
+					<input type="checkbox" name="addr" value="서울" checked >서울
+				</div>
+				<div class="w3-col">
+					<input type="checkbox" name="addr" value="경기" >경기
+				</div>
+				<div class="w3-col">
+					<input type="checkbox" name="addr" value="인천" >인천
+				</div>
+				<div class="w3-col">
+					<input type="checkbox" name="addr" value="수원" >수원
+				</div>
+				<div class="w3-col">
+					<input type="checkbox" name="addr" value="전주" >전주
+				</div>
 			</div>
 		</div>
 		<div class="w3-col">
@@ -70,16 +70,28 @@
 		</div>
 		<div class="w3-col">
 			<label class="w3-col m2 w3-text-grey">과 목 : </label>
-			<select name="sub" id="sub">
-				<option value="java">자바</option>
-				<option value="db">오라클</option>
-				<option value="web" selected>웹</option>
-				<option value="jsp">제이에스피</option>
-				<option value="spring">스프링</option>
-			</select>
+			<div class="w3-col m9">
+				<select name="sub" id="sub">
+					<option value="java">자바</option>
+					<option value="db">오라클</option>
+					<option value="web" selected>웹</option>
+					<option value="jsp">제이에스피</option>
+					<option value="spring">스프링</option>
+				</select>
+				<br>
+			</div>
 		</div>
 		
 	</div>
+<script type="text/javascript">
+		$('#sub').change(function(){
+			$('option').css('color', 'black');
+			$('option:selected').css('color', 'purple');
+			
+			var txt = $('option:selected').html();
+			$(this).parent().append('#' + txt);
+		});
+</script>	
 
 </body>
 </html>
