@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('select').width('200px').height('30px');
+		
+		var str = $(':checkbox').eq(0).prop('checked');
+		
+		console.log('checkbox eq(0) prop : ' + str);
+		
+		/*
+		var str2 = $('#id').prop('readonly');
+		console.log('id readonly : ' + str2);
+		
+		$('#id').focus(function(){
+			$('option:selected').prop('selected', 'false');
+			$('option:last').prop('selected', 'true');
+		});
+		*/
+		
+		// class 의 체크 옵션이 변경이 되면 체크박스의 내용도 변경이 되도록 하세요....
+		$(':radio').change(function(){
+			var txt = $(this).val();
+			
+			// 먼저 선택되어있는 태그 해제해주고
+			$('option:selected').prop('selected', 'false');
+			$('option[value="'+ txt +'"]').prop('selected', 'true');
+		});
+	});
+</script>
+</head>
+<body>
+		<div class="w3-content mxw600 w3-margin-top">
+		<!-- 
+		<div class="w3-col">
+			<label for="id" class="w3-col m2 w3-text-grey">아이디 : </label>
+			<input type="text" name="id" id="id">
+		</div>
+		-->
+		<div class="w3-col w3-margin-top">
+			<label class="w3-col m2 w3-text-grey">class : </label>
+			<div class="w3-col m10">
+				<div class="w3-col">
+					<input type="radio" name="cls" value="java" checked >자바
+				</div>
+				<div class="w3-col">
+					<input type="radio" name="cls" value="db" >오라클
+				</div>
+				<div class="w3-col">
+					<input type="radio" name="cls" value="web" >웹
+				</div>
+				<div class="w3-col">
+					<input type="radio" name="cls" value="jsp" >jsp
+				</div>
+				<div class="w3-col">
+					<input type="radio" name="cls" value="spring" >스프링
+				</div>
+			</div>
+		</div>
+		
+		<div class="w3-col">
+			<label class="w3-col m2 w3-text-grey">과 목 : </label>
+			<div class="w3-col m9">
+				<select name="sub" id="sub">
+					<option value="java" selected>자바</option>
+					<option value="db">오라클</option>
+					<option value="web">웹</option>
+					<option value="jsp">제이에스피</option>
+					<option value="spring">스프링</option>
+				</select>
+				<br>
+			</div>
+		</div>
+		
+	</div>
+
+</body>
+</html>
