@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../js/w3color.js"></script>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// color setting
+		for(i = 0 ; i < 4 ; i++ ){
+			$('.inblock').eq(i).addClass(w3color[i + 7]);
+		}
+		
+		function sleepTo(){
+			confirm('확인');
+		}
+		
+		// hide()
+		$('#d1').click(function(){
+			$(this).toggle(500, sleepTo); // 참고 ] toggle : show와 hide 를 번갈아면서 진행...
+/* 			$(this).hide(500, sleepTo); */
+			$('#d1').toggle(500);
+		});
+		
+		$('#d2').click(function(){
+			$(this).fadeToggle(1000, sleepTo).fadeToggle(1000);
+/* 			$(this).fadeOut(1000, sleepTo).fadeIn(1000); */
+		});
+		
+		$('#d3').click(function(){
+			$(this).fadeTo(1000, 0.5, sleepTo).fadeTo(1000, 1, sleepTo);
+		});
+		
+		$('#d4').click(function(){
+			$(this).slideUp(1000, sleepTo).slideDown(1000);
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600 w3-center w3-margin-top">
+		<div class="inblock cntnt100" id="d1">hide</div>
+		<div class="inblock cntnt100" id="d2">fadeOut</div>
+		<div class="inblock cntnt100" id="d3">fadeTo</div>
+		<div class="inblock cntnt100" id="d4">slide</div>
+	</div>
+</body>
+</html>

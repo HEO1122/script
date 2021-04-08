@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#btn').click(function(){
+			$('#fr').delay(3000).slideToggle(500);
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600 w3-center">
+		<h1 class="w3-col w3-blue w3-button w3-padding" id="btn">click</h1>
+		
+		<div class="w3-col w3-margin-top" id="fr">
+			<div class="inblock cntnt100 w3-green">box1</div>
+			<div class="inblock cntnt100 mgl20 w3-blue">box2</div>
+		</div>
+	</div>
+</body>
+</html>
