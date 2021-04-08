@@ -56,6 +56,75 @@
 				caution ]
 					입력태그중 입력내용이 없는 경우는 로그인 처리가 되면 안된다.
 		*/
+		
+		// 1. reset 기능 구현
+		$('#cbtn').click(function(){
+			/*
+				참고 ]
+					입력태그의 내용 다루는 함수
+						1. val()		-  입력내용 읽어오는 형식
+						2. val(데이터) 	- 입력태그에 내용 수정하는 명령
+			*/
+			/*
+			// 아이디로 선택하는 방법
+			$('#id').val('');
+			$('#pw').val('');
+			*/
+			$('input').val('');
+			
+			$('#id').focus();
+		});
+					
+		// 2. 로그인 기능 구현
+		$('#lbtn').click(function(){
+			// 할일
+			// 1. 데이터 읽어오고
+			var sid = $('#id').val();
+			var spw = $('#pw').val();
+			
+			// 2. 유효성 검사하고
+			if(!(sid && spw)){
+				alert('입력사항을 확인하세요!');
+				
+				// 이경우는 입력안된 태그가 존재하는 경우이므로 즉시 종료시킨다.
+				if(!sid){
+					$('#id').focus();
+					return;
+				}
+				
+				if(!spw){
+					$('#pw').focus();
+					return;
+				}
+			}
+			// 3. 데이터비교해서 처리하고
+			// 먼저 입력아이디가 배열에 있는지 확인하고
+			var result = arr.includes(sid);
+			if(!result){
+				alert('없는 아이디 입니다.');
+				$('input').val('');
+				$('#id').focus();
+				return;
+			}
+			
+			if(spw != '12345'){
+				alert('비밀번호를 확인하세요!');
+				// 이 경우는 아이디는 존재하지만 비밀번호가 맞지 않은 경우...
+				$('#pw').val('');
+				$('#pw').focus();
+				// 함수 즉시 종료
+				return;
+			}
+			// 4. 결과에 따라서 처리하고
+			// 먼저 입력창과 버튼 태그들을 감추고
+			$('.showFr').css('display', 'none');
+			
+			// 아이디 채우고
+			$('.mxw600 span').html(sid);
+			
+			// 태그 보이게 처리
+			$('.mxw600 > *:last').removeClass('w3-hide');
+		});
 	});
 </script>
 </head>
@@ -84,8 +153,8 @@
 		
 		<!-- 버튼 -->
 		<div class="w3-col w3-card-4 w3-margin-top showFr">
-			<h4 class="w3-half w3-button w3-border w3-border-red w3-hover-red w3-padding" id="cbnt">cancel</h4>
-			<h4 class="w3-half w3-button w3-border w3-border-blue w3-hover-blue w3-padding" id="lbnt">login</h4>
+			<h4 class="w3-half w3-button w3-border w3-border-red w3-hover-red w3-padding" id="cbtn">cancel</h4>
+			<h4 class="w3-half w3-button w3-border w3-border-blue w3-hover-blue w3-padding" id="lbtn">login</h4>
 		</div>
 		
 		<h3 class="w3-col w3-center w3-padding w3-card-4 w3-hide w3-border w3-lime"><span></span> 회원은 로그인한 상태입니다!</h3>
