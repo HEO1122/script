@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// d1 의 높이를 읽고
+		var h1 = $('#d1').height();
+		var h2 = $('#d1').innerHeight();
+		
+		// mxw600 클래스가 적용된 태그에 읽은 값을 h4 태그로 표현해보자.
+		$('.mxw600').append('<h4 class="w3-orange">d1 태그의 높이 : ' + h1 + '</h4>');
+		$('.mxw600').append('<h4 class="w3-lime">d1 태그의 안쪽 높이 : ' + h2 + '</h4>');
+		
+		var left = $('#d1').position().left;
+		var top = $('#d1').position().top;
+		$('.mxw600').append('<h4 class="w3-blue">왼쪽에서의 위치 : ' + left + 
+										' | 위에서부터 위치 : ' + top + '</h4>');
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600 w3-center">
+		<h1 class="w3-purple w3-margin-bottom w3-padding">jQuery size</h1>
+		<div class="w3-border inblock box250 pdAll20 w3-card-4 w3-display-container" id="d1">
+			<h3 class="inblock w3-blue cntnt100 w3-display-middle">content</h3>
+		</div>
+	</div>
+
+</body>
+</html>
