@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+	
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.w3-row').before('<h1 class="w3-purple w3-margin-top w3-margin-bottom w3-card-4 w3-round-large">아이디 정보</h1>');
+		$('#id').next().after('NAME : <span id="name">박용수</span>');
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600 w3-center">
+		<div class="w3-row">
+			<div class="w3-col w3-padding w3-border w3-round-large w3-card-4">
+				I D : <span id="id">ys</span><br>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

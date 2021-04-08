@@ -23,6 +23,10 @@
 		var top = $('#d1').position().top;
 		$('.mxw600').append('<h4 class="w3-blue">왼쪽에서의 위치 : ' + left + 
 										' | 위에서부터 위치 : ' + top + '</h4>');
+		
+		$('<h6 class="w3-pale-blue w3-border">왼쪽에서의 위치 : ' + left + 
+				' | 위에서부터 위치 : ' + top + '</h6>').insertBefore('h3');
+		$('<h6 class="w3-khaki">왼쪽에서의 위치 : ' + left + ' | 위에서부터 위치 : ' + top + '</h6>').insertAfter('h3');
 	});
 </script>
 </head>
@@ -32,6 +36,8 @@
 		<div class="w3-border inblock box250 pdAll20 w3-card-4 w3-display-container" id="d1">
 			<h3 class="inblock w3-blue cntnt100 w3-display-middle">content</h3>
 		</div>
+		
+		<h3 class="inblock w3-blue cntnt100">content</h3>
 	</div>
 
 </body>

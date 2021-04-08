@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css/user.css">
+<script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+	h4 {
+		color: gray;
+		font-size: 10pt;
+		font-weight: bold;
+		margin: 0px;
+	}
+	input {
+		outline: none;
+	}
+	
+	label {
+		font-size: 16pt;
+	}
+	
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('input').focus(function(){
+			$(this).toggleClass('w3-border-blue');
+		});
+		$('input').blur(function(){
+			$(this).toggleClass('w3-border-blue');
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600 w3-margin-top">
+		<!-- 타이틀 -->
+		<h1 class="w3-blue w3-padding w3-card-4 w3-center">로 그 인</h1>
+		
+		<!-- 입력창 -->
+		<div class="w3-col w3-padding w3-card-4 w3-marign-top showFr" id="in01">
+			<div class="w3-col w3-margin-top">
+				<label for="id" class="w3-col m2 w3-right-align w3-text-grey">I D : </label>
+				<div class="w3-col m9 pdl20">
+					<input type="text" name="id" id="id" placeholder="아이디를 입력하세요!"
+							class="w3-input w3-border w3-round-medium">
+				</div>
+			</div>
+			<div class="w3-col w3-margin-top w3-margin-bottom">
+				<label for="pw" class="w3-col m2 w3-right-align w3-text-grey">P W : </label>
+				<div class="w3-col m9 pdl20 ">
+					<input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요!"
+							class="w3-input w3-border w3-round-medium">
+				</div>
+			</div>
+		</div>
+		
+		<!-- 버튼 -->
+		<div class="w3-col w3-card-4 w3-margin-top showFr">
+			<h4 class="w3-half w3-button w3-pale-red w3-hover-red w3-padding" id="cbnt">cancel</h4>
+			<h4 class="w3-half w3-button w3-light-blue w3-hover-blue w3-padding" id="lbnt">login</h4>
+		</div>
+		
+		<h3 class="w3-col w3-center w3-padding w3-card-4 w3-hide w3-border w3-lime"><span id="sid"></span> 회원은 로그인한 상태입니다!</h3>
+	</div>
+</body>
+</html>
